@@ -1,10 +1,10 @@
 # SmartCompliance  
 **AI‑powered Policy → SCF (Secure Controls Framework) Mapping Tool**
 
-## ✅ Project Overview  
+## Project Overview  
 SmartCompliance is designed to automate the mapping of company policy clauses to the controls defined in the Secure Controls Framework (SCF). Using retrieval‑augmented generation (RAG) and semantic similarity techniques, it extracts policy text, matches to SCF controls, provides confidence scores and detailed explanations — helping organizations demonstrate compliance efficiently.
 
-## 🎯 Key Features  
+## Key Features  
 - Upload policy documents (PDF/DOCX) and automatically extract clauses  
 - Match each clause to one or more SCF controls with “High / Medium / Low” confidence classification  
 - Provide explainable mappings — semantic similarity, contextual explanation, matched control ID, domain  
@@ -15,7 +15,7 @@ SmartCompliance is designed to automate the mapping of company policy clauses to
 - Export functionality: generate a PDF report summarizing mappings, charts (confidence distribution, domain coverage) and detailed mapping table  
 - Modular backend: uses RAG pipeline for mapping, clean data‑structure (Parquet files) for storage and analysis
 
-## 🧱 Project Structure  
+## Project Structure  
 ```
 /project
 ├── gui/                        ← Desktop application UI code  
@@ -33,7 +33,7 @@ SmartCompliance is designed to automate the mapping of company policy clauses to
 └── requirements.txt            ← Python dependencies
 ```
 
-## 📦 Technology Stack  
+## Technology Stack  
 - Python 3.x  
 - CustomTkinter & Tkinter for GUI  
 - Pandas & Parquet for data handling  
@@ -43,7 +43,7 @@ SmartCompliance is designed to automate the mapping of company policy clauses to
 - Optional Firebase Realtime Database for FAQs and support queries  
 - Git + GitHub for version control & collaboration
 
-## 🛠 Getting Started  
+## Getting Started  
 ### Prerequisites  
 - Python 3.8+  
 - (Recommended) Virtual environment  
@@ -71,32 +71,32 @@ python main.py
 4. Double‑click a row or click **View Details** to open the full explanation view.  
 5. Navigate to the Report tab to view charts and export a PDF.
 
-## 📝 FAQ & Support  
+## FAQ & Support  
 Access the FAQ page from the sidebar.  
 If you encounter any issues or have additional questions, use the contact form — queries will go to Firebase if configured, else saved locally under `data/queries`.
 
-## 📊 What’s Visualized  
+## What’s Visualized  
 - **Confidence Distribution** pie chart: Breakdown of High/Medium/Low confidence mappings  
 - **Domain Coverage** bar chart: Top 10 SCF domains by number of mapped clauses  
 - **Detailed Table**: Clause index, text snippet, matched SCF ID(s), domain, confidence, score, explanation
 
-## 📁 Data & File Handling  
+## Data & File Handling  
 - Important processed data files (Parquet) are kept in `data/processed/` and **tracked** in Git if they are essential for the application.  
 - Virtual environments (`.venv/`, `venv/`) and large library binaries are **excluded** from the repository (see `.gitignore`).  
 - For large files or models (>100 MB) consider using Git Large File Storage (Git LFS).
 
-## ✅ Best Practices  
+## Best Practices  
 - Use the search bar to quickly locate SCF mappings by control ID.  
 - Manually review **low‑confidence** mappings — these may require human oversight.  
 - Keep the processed Parquet files up‑to‑date after new policy uploads.  
 - After exporting a PDF, archive it appropriately; avoid committing generated files if they bloat the repo.
 
-## 🔮 Roadmap  
+## Roadmap  
 - Batch upload of multiple policy documents  
 - Allow versioning of policies and mapping revisions  
 - Add user authentication and cloud storage for policies and results  
 - Integrate interactive dashboards (e.g., via Plotly) for deeper data exploration  
 - Add “Explain this mapping” button to open LLM‑dialogue with user about a clause‑to‑control mapping  
 
-## 📄 License  
+## License  
 MIT License — see `LICENSE` file for full details.
